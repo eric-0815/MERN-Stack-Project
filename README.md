@@ -19,3 +19,4 @@ Include:
 2. react-router-dom
 3. redux react-redux redux-thunk redux-devtools-extension(allow us to make a synchronous request in our actions)
 4. moment react-moment: date and time library
+5. uuid: universal id on fly
