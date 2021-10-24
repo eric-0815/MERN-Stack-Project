@@ -1,3 +1,4 @@
+Server:
 Include:
 
 1. express: the main web framework for the backend
@@ -10,3 +11,11 @@ Include:
 8. request: allows us to make HTTP request to another API.
 
 9. npm i -D nodemon concurrently: allows us to refresh the page when we saved and run our express server and react at the same time.
+
+Client:
+Include:
+
+1. axios
+2. react-router-dom
+3. redux react-redux redux-thunk redux-devtools-extension(allow us to make a synchronous request in our actions)
+4. moment react-moment: date and time library
