@@ -1,3 +1,6 @@
+How To run:
+npm run server
+
 Server:
 Include:
 
