@@ -1,5 +1,5 @@
 ## How To run:
-npm run server
+npm run dev
 
 ## Server:
 Include:
