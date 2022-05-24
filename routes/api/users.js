@@ -13,7 +13,7 @@ const User = require("../../models/User");
 // @access Public
 router.post(
   "/",
-  [
+  [ // express-validator
     check("name", "Name is required").not().isEmpty(),
     check("email", "Please include a valid email").isEmail(),
     check(
@@ -22,6 +22,7 @@ router.post(
     ).isLength({ min: 6 }),
   ],
   async (req, res) => {
+    // Finds the validation errors in this request and wraps them in an object
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -30,7 +31,7 @@ router.post(
     const { name, email, password } = req.body;
 
     try {
-      // See if user exsits
+      // Check if the user exsits
       let user = await User.findOne({ email });
       if (user) {
         return res
@@ -63,7 +64,7 @@ router.post(
           id: user.id,
         },
       };
-
+      // sign jwt using user id payload and a jwt secret
       jwt.sign(
         payload,
         config.get("jwtSecret"),

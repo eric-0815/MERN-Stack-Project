@@ -7,10 +7,11 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const { check, validationResult } = require("express-validator");
 // @route  GET api/auth
-// @desc   Test route
+// @desc   auth
 // @access Public
 router.get("/", auth, async (req, res) => {
   try {
+    // return the user data, but no include the user password
     const user = await User.findById(req.user.id).select("-password");
     res.json(user);
   } catch (err) {
@@ -23,7 +24,7 @@ router.get("/", auth, async (req, res) => {
 // @access Public
 router.post(
   "/",
-  [
+  [ // express-validator
     check("email", "Please include a valid email").isEmail(),
     check("password", "Password is required").exists(),
   ],
