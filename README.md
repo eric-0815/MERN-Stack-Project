@@ -1,4 +1,7 @@
-Server:
+## How To run:
+npm run dev
+
+## Server:
 Include:
 
 1. express: the main web framework for the backend
@@ -12,7 +15,7 @@ Include:
 
 9. npm i -D nodemon concurrently: allows us to refresh the page when we saved and run our express server and react at the same time.
 
-Client:
+## Client:
 Include:
 
 1. axios
