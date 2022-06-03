@@ -31,5 +31,5 @@ Include:
 4. moment react-moment: date and time library
 5. uuid: universal id on fly
 
-TO run this project:
+To run this project:
 npm run dev
